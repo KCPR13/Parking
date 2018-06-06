@@ -24,12 +24,36 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Pojazd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Gra.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Losowanie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Strefa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Miejsca.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Parking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Losowanie.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
