@@ -27,9 +27,6 @@
     <ClInclude Include="Pojazd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Gra.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Losowanie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -54,6 +51,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Losowanie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pojazd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Strefa.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -3,7 +3,7 @@
  static class Losowanie
 {
 public:
-static int Losuj();
+static int Losuj(int przedzial);
 };
 #endif // !LOSOWANIE_H
 

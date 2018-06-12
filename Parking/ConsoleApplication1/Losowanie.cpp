@@ -6,10 +6,9 @@
 
 using namespace std;
 
-int Losowanie::Losuj()
+int Losowanie::Losuj(int przedzial)
 {
 	 int wylosowanaLiczba;
-	 srand(time(NULL));
-	 wylosowanaLiczba = rand()%50 + 1;
+	 wylosowanaLiczba = rand()%przedzial ;
 	 return wylosowanaLiczba;
 }

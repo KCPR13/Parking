@@ -1,3 +1,23 @@
-﻿  Parking.cpp
-c:\users\lenovo\onedrive\git\parking\parking\consoleapplication1\losowanie.h(7): warning C4091: 'static ': ignored on left of 'Losowanie' when no variable is declared
-  ConsoleApplication1.vcxproj -> C:\Users\Lenovo\OneDrive\git\Parking\Parking\Debug\ConsoleApplication1.exe
+﻿  Main.cpp
+c:\users\lenovo\desktop\parking2\parking-master\parking\consoleapplication1\losowanie.h(7): warning C4091: 'static ': ignored on left of 'Losowanie' when no variable is declared
+c:\users\lenovo\desktop\parking2\parking-master\parking\consoleapplication1\strefa.h(46): warning C4091: 'static ': ignored on left of 'Strefa' when no variable is declared
+  Parking.cpp
+c:\users\lenovo\desktop\parking2\parking-master\parking\consoleapplication1\losowanie.h(7): warning C4091: 'static ': ignored on left of 'Losowanie' when no variable is declared
+c:\users\lenovo\desktop\parking2\parking-master\parking\consoleapplication1\strefa.h(46): warning C4091: 'static ': ignored on left of 'Strefa' when no variable is declared
+  Strefa.cpp
+c:\users\lenovo\desktop\parking2\parking-master\parking\consoleapplication1\losowanie.h(7): warning C4091: 'static ': ignored on left of 'Losowanie' when no variable is declared
+c:\users\lenovo\desktop\parking2\parking-master\parking\consoleapplication1\strefa.h(46): warning C4091: 'static ': ignored on left of 'Strefa' when no variable is declared
+  Generating Code...
+Parking.obj : error LNK2001: unresolved external symbol "public: static class std::vector<class Samochod,class std::allocator<class Samochod> > Strefa::miejscaSamochody" (?miejscaSamochody@Strefa@@2V?$vector@VSamochod@@V?$allocator@VSamochod@@@std@@@std@@A)
+Strefa.obj : error LNK2001: unresolved external symbol "public: static class std::vector<class Samochod,class std::allocator<class Samochod> > Strefa::miejscaSamochody" (?miejscaSamochody@Strefa@@2V?$vector@VSamochod@@V?$allocator@VSamochod@@@std@@@std@@A)
+Parking.obj : error LNK2001: unresolved external symbol "public: static class std::vector<class Ciezarowka,class std::allocator<class Ciezarowka> > Strefa::miejscaCiezarowki" (?miejscaCiezarowki@Strefa@@2V?$vector@VCiezarowka@@V?$allocator@VCiezarowka@@@std@@@std@@A)
+Strefa.obj : error LNK2001: unresolved external symbol "public: static class std::vector<class Ciezarowka,class std::allocator<class Ciezarowka> > Strefa::miejscaCiezarowki" (?miejscaCiezarowki@Strefa@@2V?$vector@VCiezarowka@@V?$allocator@VCiezarowka@@@std@@@std@@A)
+Parking.obj : error LNK2001: unresolved external symbol "public: static class std::vector<class Motocykl,class std::allocator<class Motocykl> > Strefa::miejscaMotocykle" (?miejscaMotocykle@Strefa@@2V?$vector@VMotocykl@@V?$allocator@VMotocykl@@@std@@@std@@A)
+Strefa.obj : error LNK2001: unresolved external symbol "public: static class std::vector<class Motocykl,class std::allocator<class Motocykl> > Strefa::miejscaMotocykle" (?miejscaMotocykle@Strefa@@2V?$vector@VMotocykl@@V?$allocator@VMotocykl@@@std@@@std@@A)
+Parking.obj : error LNK2001: unresolved external symbol "public: static int Strefa::WszysSam" (?WszysSam@Strefa@@2HA)
+Strefa.obj : error LNK2001: unresolved external symbol "public: static int Strefa::WszysSam" (?WszysSam@Strefa@@2HA)
+Parking.obj : error LNK2001: unresolved external symbol "public: static int Strefa::WszysCiez" (?WszysCiez@Strefa@@2HA)
+Strefa.obj : error LNK2001: unresolved external symbol "public: static int Strefa::WszysCiez" (?WszysCiez@Strefa@@2HA)
+Parking.obj : error LNK2001: unresolved external symbol "public: static int Strefa::WszysMot" (?WszysMot@Strefa@@2HA)
+Strefa.obj : error LNK2001: unresolved external symbol "public: static int Strefa::WszysMot" (?WszysMot@Strefa@@2HA)
+C:\Users\Lenovo\Desktop\parking2\Parking-master\Parking\Debug\ConsoleApplication1.exe : fatal error LNK1120: 6 unresolved externals
