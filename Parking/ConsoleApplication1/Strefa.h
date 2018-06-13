@@ -13,7 +13,8 @@ public:
 	static vector<Ciezarowka> miejscaCiezarowki;
 	static vector<Motocykl> miejscaMotocykle;
 	static void WypelnienieStrefy();
-	static int WszysSam, WszysCiez, WszysMot; // liczba wylosowanych miejsc danego typu
+	static void LosujStrefe();
+	static int wszysSam, wszysCiez, wszysMot; // liczba wszystkich wylosowanych miejsc danego typu
 	Strefa();
 	
 };

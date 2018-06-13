@@ -4,15 +4,18 @@
 #include <iostream>
 #include "Strefa.h"
 #include "Losowanie.h"
+#define minSterf 2
+#define godzina 60
 
 using namespace std;
 int iloscStref;
 void Parking::Inicjalizacja()
 {
-	iloscStref=Losowanie::Losuj(5)+2;
+	iloscStref=Losowanie::Losuj(5)+minSterf;
 	for (int i = 0; i < iloscStref; i++) //tworzenie nowych stref
 	{
-		Strefy.push_back(Strefa());
+		Strefa *S = new Strefa();
+		Strefy.push_back(*S);
 	}
 }
 Pojazd Parking::NowyPojazd()
@@ -27,9 +30,9 @@ Pojazd Parking::NowyPojazd()
 bool Parking::Wjazd(Pojazd &P)
 {
 		// co 60 minut dodanie oplaty za parking
-	if (((P.czasPostoju / 60)+1)*P.oplata >= P.gotowka)//tutaj jeszcze sprawdzenie czy jest wolne miejsce dla danego pojazdu
+	if (((P.czasPostoju+1 / godzina)*P.oplata >= P.gotowka) && P.czasPostoju!=0)//tutaj jeszcze sprawdzenie czy jest wolne miejsce dla danego pojazdu
 	{
-		P.gotowka -= ((P.czasPostoju % 60)+1)*P.oplata; // pobranie oplaty
+		P.gotowka -= ((P.czasPostoju /godzina)+1)*P.oplata; // pobranie oplaty
 		return true; // wprowadzenie na miejsce 
 	}
 	else return false;

@@ -7,45 +7,66 @@
 
 using namespace std;
 
-int Dzialania();
+char Dzialania();
+Pojazd NowyPojazd(Parking *P);
 int main()
 {
 	Parking *P = new Parking();
 	P->Inicjalizacja();
 	while (1)
 	{
-		int stan = Dzialania();
-		if (stan == 1)
+		char stan = Dzialania();
+		switch (stan)
 		{
-			P->StanParkingu();				// funkcja do wypisania stanu parkingu
-		}
-		else if (stan == 2)
-		{
-			Pojazd NowyPoj = P->NowyPojazd();
-			if (P->Wjazd(NowyPoj))
+		case '1':
+			P->StanParkingu();
+			break;
+		case '2':
+			
+			if (P->Wjazd(NowyPojazd(P)))
 			{
 				// wprowadz pojazd na miejsce
 			}
-			else cout << "Nie mozesz wjechac na parking!" << endl;
+			else
+			{
+				cout << "Nie mozesz wjechac na parking!" << endl;
+			}
+			break;
+		case '3':
+			break;
+		default:
+			break;
 		}
-		else if (stan == 3) break;
+		
 	} 
 	return 0;
 }
 
-int Dzialania()
+Pojazd NowyPojazd(Parking *P)
 {
-	int akcja;
-	Wybor:
+	Pojazd NowyPoj = P->NowyPojazd();
+	return NowyPoj;
+}
+
+char Dzialania()
+{
+Wybor:
+	char akcja;
 	cout << "Wybierz jedna z trzech opcji: [1-3]"<< endl;
-	cin >> akcja;
-	if (akcja != 1 || akcja != 2 || akcja != 3)
-	{
-		cout << "Nie ma takiej opcji" << endl;
-		goto Wybor;
-	}
 	cout << "1. Wypisanie stanu parkingu" << endl;
 	cout << "2. Wjazd nowego pojazdu na parking" << endl;
-	cout << "3.zakonczenie programu" << endl;
-	return akcja;
+	cout << "3. Zakonczenie programu" << endl;
+	cin >> akcja;
+	if (akcja == 1 || akcja == 2 || akcja == 3)
+	{
+		return akcja;
+			
+	} 
+	else
+	{
+		cout << "nie ma takiej opcji" << endl;
+		goto Wybor;
+	}
+	return 0;
+	
 }
