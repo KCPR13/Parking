@@ -2,7 +2,7 @@
 #include "Pojazd.h"
 #include "Strefa.h"
 
-void Strefa::WypelnienieStrefy()
+ void Strefa::WypelnienieStrefy()
 {
 	for (int i = 0; i<Strefa::WszysCiez ; i++)
 	{

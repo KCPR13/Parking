@@ -1,5 +1,5 @@
-#ifndef STREFA
-#define STREFA
+#ifndef STREFA_H
+#define STREFA_H
 
 #include "stdafx.h"
 #include <vector>
@@ -46,4 +46,4 @@ public:
 };
 
 
-#endif // !STREFA
+#endif // !STREFA_H
