@@ -26,9 +26,10 @@ Pojazd Parking::NowyPojazd()
 }
 bool Parking::Wjazd(Pojazd &P)
 {
-	if ((P.czasPostoju % 60)*P.oplata >= P.gotowka)//tutaj jeszcze sprawdzenie czy jest wolne miejsce dla danego pojazdu
+		// co 60 minut dodanie oplaty za parking
+	if (((P.czasPostoju / 60)+1)*P.oplata >= P.gotowka)//tutaj jeszcze sprawdzenie czy jest wolne miejsce dla danego pojazdu
 	{
-		P.gotowka -= (P.czasPostoju % 60)*P.oplata; // pobranie oplaty
+		P.gotowka -= ((P.czasPostoju % 60)+1)*P.oplata; // pobranie oplaty
 		return true; // wprowadzenie na miejsce 
 	}
 	else return false;

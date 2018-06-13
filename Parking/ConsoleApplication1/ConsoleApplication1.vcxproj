@@ -147,7 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Losowanie.h" />
-    <ClInclude Include="Miejsca.h" />
     <ClInclude Include="Parking.h" />
     <ClInclude Include="Pojazd.h" />
     <ClInclude Include="stdafx.h" />

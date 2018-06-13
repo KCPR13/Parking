@@ -33,9 +33,6 @@
     <ClInclude Include="Strefa.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Miejsca.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Parking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
