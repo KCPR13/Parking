@@ -30,14 +30,19 @@ Pojazd Parking::NowyPojazd()
 bool Parking::Wjazd(Pojazd &P)
 {
 		// co 60 minut dodanie oplaty za parking
-	if (((P.czasPostoju+1 / godzina)*P.oplata >= P.gotowka) && P.czasPostoju!=0)//tutaj jeszcze sprawdzenie czy jest wolne miejsce dla danego pojazdu
+	if ((Parking::Oplata(P) >= P.gotowka) && P.czasPostoju!=0)//tutaj jeszcze sprawdzenie czy jest wolne miejsce dla danego pojazdu
 	{
-		P.gotowka -= ((P.czasPostoju /godzina)+1)*P.oplata; // pobranie oplaty
+		P.gotowka -= Parking::Oplata(P); // pobranie oplaty
 		return true; // wprowadzenie na miejsce 
 	}
 	else return false;
-	return false;
 }
+int Parking::Oplata(Pojazd &P)
+{
+	int oplata = (P.czasPostoju / godzina)*P.oplata;
+	return oplata;
+}
+
 void Parking::StanParkingu()
 {
 	cout << "Ilosc stref: " << iloscStref << endl;

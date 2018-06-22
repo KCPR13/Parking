@@ -12,6 +12,7 @@ public:
 	Pojazd NowyPojazd();
 	bool Wjazd(Pojazd &P);
 	void StanParkingu();
+	static int Oplata(Pojazd &P);
 };
 
 #endif // !PARKING_H
