@@ -6,12 +6,12 @@ using namespace std;
 void Pojazd::Wypisz()
 {
 	cout << "gotowka: " << gotowka << " czas: " << czasPostoju <<" typ: ";
-	if (typPojazdu == 1) cout << "Samochod" << endl;
-	else if(typPojazdu==2)
+	if (typPojazdu == samochod) cout << "Samochod" << endl;
+	else if(typPojazdu== ciezarowka)
 	{
 		cout << "Ciezarowka" << endl;
 	}
-	else if (typPojazdu == 3)
+	else if (typPojazdu == motocykl)
 	{
 		cout << "Motocykl" << endl;
 	}
