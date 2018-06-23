@@ -7,6 +7,14 @@
 
 using namespace std;
 
+void Cennik()
+{
+	cout << "Oplata za kazda rozpoczeta godzine postoju:" << endl;
+	cout << "Motocykl-10" << endl;
+	cout << "Samochod-15" << endl;
+	cout << "Ciezarowka-20" << endl;
+	cout << endl;
+}
 int Dzialania()
 {
 Wybor:
@@ -28,34 +36,29 @@ Wybor:
 	return 0;
 }
 
-Pojazd NowyPojazd(Parking *P)
-{
-	Pojazd NowyPoj = P->NowyPojazd();
-	return NowyPoj;
-}
-
 int main()
 {
+	Cennik();
 	srand(time(NULL));
-	Parking *P = new Parking();
-	P->Inicjalizacja();
+	Parking *parking = new Parking();
+	parking->Inicjalizacja();
 	while (1)
 	{
-		int stan = Dzialania();
-		switch (stan)
+		switch (Dzialania())
 		{
 		case 1:
-			P->StanParkingu();
+			parking->Stan();
 			break;
 		case 2:
-			
-			if (P->Wjazd(NowyPojazd(P)))
+			Pojazd nowyPojazd = parking->NowyPojazd();
+			if (parking->CzyPojazdMozeWjechac(nowyPojazd))
 			{
-				// wprowadz pojazd na miejsce
+				parking->Wjazd(nowyPojazd);
 			}
 			else
 			{
 				cout << "Nie mozesz wjechac na parking!" << endl;
+				cout << endl;
 			}
 			break;
 		case 3:

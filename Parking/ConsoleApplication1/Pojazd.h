@@ -1,33 +1,35 @@
 #ifndef POJAZD_H
 #define POJAZD_H
+#define iloscGotowki 100
+#define minutyPostoju 100
+#define minCzasPostoju 10
+
 #include "stdafx.h"
 #include "Losowanie.h"
 
  class Pojazd
 {
 public:
- int oplata;
+int oplata;
 int gotowka;
 int czasPostoju;
-
+int typPojazdu;
+void Wypisz();
 };
 
  class Samochod : public Pojazd
  {	 
  public:
-	 void Wypisz();
 	 Samochod();
  };
  class Ciezarowka : public Pojazd
  {
  public:
-	 void Wypisz();
 	 Ciezarowka();
  };
  class Motocykl : public Pojazd
  {
  public: 
-	 void Wypisz();
 	 Motocykl();
  };
 

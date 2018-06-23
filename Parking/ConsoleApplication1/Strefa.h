@@ -13,9 +13,9 @@ using namespace std;
  class Strefa
 {
 public:
-	 vector<Samochod> miejscaSamochody; // wektorymiejsc dla kazdego z typow
-	 vector<Ciezarowka> miejscaCiezarowki;
-	 vector<Motocykl> miejscaMotocykle;
+	 vector<Pojazd> miejscaSamochody; // wektorymiejsc dla kazdego z typow
+	 vector<Pojazd> miejscaCiezarowki;
+	 vector<Pojazd> miejscaMotocykle;
 	 void WypelnienieStrefy();
 	 void LosujStrefe();
 	 int wszysSam, wszysCiez, wszysMot; // liczba wszystkich wylosowanych miejsc danego typu
