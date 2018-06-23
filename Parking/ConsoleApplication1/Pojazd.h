@@ -9,7 +9,7 @@ public:
  int oplata;
 int gotowka;
 int czasPostoju;
-Pojazd() {};
+
 };
 
  class Samochod : public Pojazd

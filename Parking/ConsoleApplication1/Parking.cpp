@@ -4,14 +4,13 @@
 #include <iostream>
 #include "Strefa.h"
 #include "Losowanie.h"
-#define minSterf 2
-#define godzina 60
 
 using namespace std;
 int iloscStref;
+
 void Parking::Inicjalizacja()
 {
-	iloscStref=Losowanie::Losuj(5)+minSterf;
+	iloscStref=Losowanie::Losuj(losujStrefy)+minSterf;
 	for (int i = 0; i < iloscStref; i++) //tworzenie nowych stref
 	{
 		Strefa *S = new Strefa();
@@ -21,7 +20,7 @@ void Parking::Inicjalizacja()
 Pojazd Parking::NowyPojazd()
 {
 	Pojazd P;
-	int wylosowanyPojazd = Losowanie::Losuj(3);  //losowanie nowego pojazdu
+	int wylosowanyPojazd = Losowanie::Losuj(typyPojazdow);  //losowanie nowego pojazdu
 	if (wylosowanyPojazd == 0) P = Samochod();
 	else if (wylosowanyPojazd == 1) P = Ciezarowka();
 	else Pojazd P = Motocykl();
@@ -48,9 +47,13 @@ void Parking::StanParkingu()
 	cout << "Ilosc stref: " << iloscStref << endl;
 	for (int i = 0; i < iloscStref; i++)
 	{
-		cout << "Strefa: " << i << endl;
-		cout << "Wszystkich/wolnych miejsc dla motocykli: " << endl; //tutaj dla kazdego do wypisania liczbe miejsc
-		cout << "Wszystkich/wolnych miejsc dla samochodow: " << endl;
-		cout << "Wszystkich/wolnych miejsc dla ciezarowek: " << endl;
+		cout << "Strefa: " << i+1 << endl;
+		cout << "Zajetych/wszystkich miejsc dla motocykli: " << Strefy[i].motocykleZajete << "/" << Strefy[i].wszysMot << endl; //tutaj dla kazdego do wypisania liczbe miejsc
+		cout << "Zajetych/wszystkich miejsc dla samochodow: " << Strefy[i].samochodyZajete << "/"<<Strefy[i].wszysSam  << endl;
+		cout << "Zajetych/wszystkich miejsc dla ciezarowek: " << Strefy[i].ciezarowkiZajete << "/" << Strefy[i].wszysCiez << endl;
 	}
+}
+bool Parking::WolneMiejsce()
+{
+	return false;
 }
