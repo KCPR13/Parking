@@ -1,6 +1,11 @@
 #include "stdafx.h"
 #include "Pojazd.h"
 #include "Strefa.h"
+#include "Samochod.h"
+#include "Motocykl.h"
+#include "Ciezarowka.h"
+#include <iostream>
+using namespace std;
 
  void Strefa::WypelnienieStrefy()
 {
@@ -9,8 +14,8 @@
 		int tmp=Losowanie::Losuj(czyZajacMiejsce);
 		if (tmp)
 		{
-			Ciezarowka *C=new Ciezarowka();
-			Strefa::miejscaCiezarowki.push_back(*C);
+			Ciezarowka *C= new Ciezarowka();
+			miejscaCiezarowki.insert(miejscaCiezarowki.begin()+i, *C);
 			ciezarowkiZajete++;
 		}
 	}
@@ -20,7 +25,7 @@
 		if (tmp)
 		{
 			Motocykl *M= new Motocykl();
-			Strefa::miejscaMotocykle.push_back(*M);
+			miejscaMotocykle.insert(miejscaMotocykle.begin() + i, *M);
 			motocykleZajete++;
 		}
 	}
@@ -30,7 +35,7 @@
 		if (tmp)
 		{
 			Samochod *S=new Samochod();
-			Strefa::miejscaSamochody.push_back(*S);
+			miejscaSamochody.insert(miejscaSamochody.begin() + i, *S);
 			samochodyZajete++;
 		}
 	}

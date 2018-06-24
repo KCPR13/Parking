@@ -1,9 +1,12 @@
+
 #include "stdafx.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include "Pojazd.h"
 #include "Parking.h"
+
+#define iteracjaCzasu 30
 
 using namespace std;
 
@@ -38,12 +41,15 @@ Wybor:
 
 int main()
 {
+	int czas = 0;
 	Cennik();
 	srand(time(NULL));
 	Parking *parking = new Parking();
 	parking->Inicjalizacja();
 	while (1)
 	{
+		parking->OpuszczenieParkingu();
+		cout << "Czas: " << czas << " min" << endl;
 		switch (Dzialania())
 		{
 		case 1:
@@ -65,8 +71,11 @@ int main()
 			goto Koniec;
 			break;
 		default:
-			break;
-		}		
+			break;		
+		}	
+		czas += iteracjaCzasu;
+		parking->AktualizacjaCzasuMiejscParkingowych();
+		
 	}
 	Koniec:
 	return 0;

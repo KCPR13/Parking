@@ -19,27 +19,6 @@ void Pojazd::Wypisz()
 	cout << endl;
 }
 
-Samochod::Samochod()
-{
-	typPojazdu = 1;
-	oplata = 15;
-	gotowka = Losowanie::Losuj(iloscGotowki);
-	czasPostoju = Losowanie::Losuj(minutyPostoju) + minCzasPostoju; // aby nie bylo postoju 0
-	//Wypisz(); //wypisanie wiadomosci o pojezdzie
-}
-Ciezarowka::Ciezarowka()
-{
-	typPojazdu = 2;
-	oplata = 20;
-	gotowka = Losowanie::Losuj(iloscGotowki);
-	czasPostoju = Losowanie::Losuj(minutyPostoju) + minCzasPostoju;
-	//Wypisz();
-}
-Motocykl::Motocykl()
-{
-	typPojazdu = 3;
-	oplata = 10;
-	gotowka = Losowanie::Losuj(iloscGotowki);
-	czasPostoju = Losowanie::Losuj(minutyPostoju) + minCzasPostoju;
-	//Wypisz();
-}
+
+
+

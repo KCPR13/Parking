@@ -146,18 +146,24 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ciezarowka.h" />
     <ClInclude Include="Losowanie.h" />
+    <ClInclude Include="Motocykl.h" />
     <ClInclude Include="Parking.h" />
     <ClInclude Include="Pojazd.h" />
+    <ClInclude Include="Samochod.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Strefa.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Ciezarowka.cpp" />
     <ClCompile Include="Losowanie.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Motocykl.cpp" />
     <ClCompile Include="Parking.cpp" />
     <ClCompile Include="Pojazd.cpp" />
+    <ClCompile Include="Samochod.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

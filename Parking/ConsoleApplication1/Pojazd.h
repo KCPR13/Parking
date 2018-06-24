@@ -21,21 +21,5 @@ int typPojazdu;
 void Wypisz();
 };
 
- class Samochod : public Pojazd
- {	 
- public:
-	 Samochod();
- };
- class Ciezarowka : public Pojazd
- {
- public:
-	 Ciezarowka();
- };
- class Motocykl : public Pojazd
- {
- public: 
-	 Motocykl();
- };
-
 #endif // !POJAZD_H
 

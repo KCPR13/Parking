@@ -1,15 +1,6 @@
-﻿  stdafx.cpp
-  Losowanie.cpp
+﻿  Parking.cpp
 c:\users\lenovo\onedrive\git\parking\parking\consoleapplication1\losowanie.h(8): warning C4091: 'static ': ignored on left of 'Losowanie' when no variable is declared
-  Main.cpp
-c:\users\lenovo\onedrive\git\parking\parking\consoleapplication1\losowanie.h(8): warning C4091: 'static ': ignored on left of 'Losowanie' when no variable is declared
-c:\users\lenovo\onedrive\git\parking\parking\consoleapplication1\main.cpp(42): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Parking.cpp
-c:\users\lenovo\onedrive\git\parking\parking\consoleapplication1\losowanie.h(8): warning C4091: 'static ': ignored on left of 'Losowanie' when no variable is declared
-  Pojazd.cpp
-c:\users\lenovo\onedrive\git\parking\parking\consoleapplication1\losowanie.h(8): warning C4091: 'static ': ignored on left of 'Losowanie' when no variable is declared
-  Strefa.cpp
-c:\users\lenovo\onedrive\git\parking\parking\consoleapplication1\losowanie.h(8): warning C4091: 'static ': ignored on left of 'Losowanie' when no variable is declared
-  Generating Code...
-  LINK : C:\Users\Lenovo\OneDrive\git\Parking\Parking\Debug\ConsoleApplication1.exe not found or not built by the last incremental link; performing full link
+c:\users\lenovo\onedrive\git\parking\parking\consoleapplication1\parking.cpp(72): warning C4018: '<': signed/unsigned mismatch
+c:\users\lenovo\onedrive\git\parking\parking\consoleapplication1\parking.cpp(90): warning C4018: '<': signed/unsigned mismatch
+c:\users\lenovo\onedrive\git\parking\parking\consoleapplication1\parking.cpp(107): warning C4018: '<': signed/unsigned mismatch
   ConsoleApplication1.vcxproj -> C:\Users\Lenovo\OneDrive\git\Parking\Parking\Debug\ConsoleApplication1.exe

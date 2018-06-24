@@ -36,6 +36,15 @@
     <ClInclude Include="Parking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Motocykl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ciezarowka.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Samochod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -54,6 +63,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Strefa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Samochod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Motocykl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ciezarowka.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

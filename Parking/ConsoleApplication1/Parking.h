@@ -8,6 +8,7 @@
 #define motocykl 3
 #define samochod 1
 #define ciezarowka 2
+#define przedluzeniePostoju 60
 
 #include "stdafx.h"
 #include <vector>
@@ -24,8 +25,11 @@ public:
 	int Oplata(Pojazd &P);
 	bool WolneMiejsce(Pojazd &P);
 	bool CzyPojazdMozeWjechac(Pojazd &P);
+	void AktualizacjaCzasuMiejscParkingowych();
+	void OpuszczenieParkingu();
 	int iloscStref;
 	int wolnaStrefaDlaMotocykla, WolnaStrefaDlaCiezarowki, WolnaStrefaDlaSamochodu;
+	int wolneMiejsceMot,wolneMiejsceSam,wolneMiejsceCiez;
 };
 
 #endif // !PARKING_H
