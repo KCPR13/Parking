@@ -69,7 +69,7 @@ bool Parking::Wjazd(Pojazd &P)
 		if (P.typPojazdu == motocykl)
 		{	
 			int wolneMiejsceMot = 0;
-			for (size_t i = 0; i <Strefy[wolnaStrefaDlaMotocykla].wszysMot; i++)
+			for (int i = 0; i <Strefy[wolnaStrefaDlaMotocykla].wszysMot; i++)
 			{
 				if (Strefy[wolnaStrefaDlaMotocykla].miejscaMotocykle[i].czasPostoju ==0 ) // tylko w pustych miejscach wektora czas Postoju=0
 				{
@@ -87,7 +87,7 @@ bool Parking::Wjazd(Pojazd &P)
 		}
 		else if (P.typPojazdu == samochod)
 		{
-			for (size_t i = 0; i <Strefy[WolnaStrefaDlaSamochodu].wszysSam; i++)
+			for (int i = 0; i <Strefy[WolnaStrefaDlaSamochodu].wszysSam; i++)
 			{
 				if (Strefy[WolnaStrefaDlaSamochodu].miejscaSamochody[i].czasPostoju == 0) 
 				{
@@ -104,7 +104,7 @@ bool Parking::Wjazd(Pojazd &P)
 		}
 		else if (P.typPojazdu == ciezarowka)
 		{
-			for (size_t i = 0; i <Strefy[WolnaStrefaDlaCiezarowki].wszysCiez; i++)
+			for (int i = 0; i <Strefy[WolnaStrefaDlaCiezarowki].wszysCiez; i++)
 			{
 				if (Strefy[WolnaStrefaDlaCiezarowki].miejscaCiezarowki[i].czasPostoju == 0) 
 				{
