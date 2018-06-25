@@ -18,6 +18,7 @@ void Cennik()
 	cout << "Ciezarowka-20" << endl;
 	cout << endl;
 }
+
 int Dzialania()
 {
 Wybor:

@@ -5,6 +5,7 @@
 #include "Motocykl.h"
 #include "Ciezarowka.h"
 #include <iostream>
+
 using namespace std;
 
  void Strefa::WypelnienieStrefy()

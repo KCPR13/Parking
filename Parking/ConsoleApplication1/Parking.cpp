@@ -56,7 +56,7 @@ bool Parking::CzyPojazdMozeWjechac(Pojazd &P)
 	{
 		cout << "Pojazd ma pieniadze na parking"<< endl;
 	}
-	else cout << "Pojazd nie ma pieniedzy na parking"<< Parking::Oplata(P) << endl;
+	else cout << "Pojazd nie ma pieniedzy na parking: "<< Parking::Oplata(P) << endl;
 	if ((Parking::Oplata(P) <= P.gotowka) && Parking::WolneMiejsce(P)) return true;
 	else return false;
 }
@@ -71,7 +71,7 @@ bool Parking::Wjazd(Pojazd &P)
 			int wolneMiejsceMot = 0;
 			for (size_t i = 0; i <Strefy[wolnaStrefaDlaMotocykla].wszysMot; i++)
 			{
-				if (Strefy[wolnaStrefaDlaMotocykla].miejscaMotocykle[i].czasPostoju ==0 ) // tylko w pustych miejscach wektora czasP0stoju=0
+				if (Strefy[wolnaStrefaDlaMotocykla].miejscaMotocykle[i].czasPostoju ==0 ) // tylko w pustych miejscach wektora czas Postoju=0
 				{
 					wolneMiejsceMot = i;
 					break;
