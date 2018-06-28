@@ -1,11 +1,12 @@
 #include "stdafx.h"
 #include "Samochod.h"
+#include "defines.h"
 
 Samochod::Samochod()
 {
-	typPojazdu = 1;
-	oplata = 15;
-	gotowka = Losowanie::Losuj(iloscGotowki);
-	czasPostoju = Losowanie::Losuj(minutyPostoju) + minCzasPostoju; // aby nie bylo postoju 0
-																	//Wypisz(); //wypisanie wiadomosci o pojezdzie
+	typPojazdu = SAMOCHOD;
+	oplata = OPLATA_SAMOCHOD;
+	gotowka = Losowanie::Losuj(ILOSC_GOTOWKI);
+	czasPostoju = Losowanie::Losuj(MINUTY_POSTOJU) + MIN_CZAS_POSTOJU; // aby nie bylo postoju 0
+	//Wypisz(); //wypisanie wiadomosci o pojezdzie
 }

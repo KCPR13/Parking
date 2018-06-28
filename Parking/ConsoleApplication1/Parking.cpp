@@ -7,6 +7,7 @@
 #include "Samochod.h"
 #include "Motocykl.h"
 #include "Ciezarowka.h"
+#include "defines.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ using namespace std;
 
 void Parking::Inicjalizacja()
 {
-	iloscStref=Losowanie::Losuj(losujStrefy)+minSterf;
+	iloscStref=Losowanie::Losuj(LOSUJ_STREFY)+MINSTREF;
 	for (int i = 0; i < iloscStref; i++) //tworzenie nowych stref
 	{
 		Strefa *S = new Strefa();
@@ -24,7 +25,7 @@ void Parking::Inicjalizacja()
 Pojazd Parking::NowyPojazd()
 {
 	
-	int wylosowanyPojazd = Losowanie::Losuj(typyPojazdow);  //losowanie nowego pojazdu
+	int wylosowanyPojazd = Losowanie::Losuj(TYPY_POJAZDOW);  //losowanie nowego pojazdu
 	if (wylosowanyPojazd == 0)
 	{
 		Samochod *P =new Samochod();
@@ -47,26 +48,26 @@ Pojazd Parking::NowyPojazd()
 }
 bool Parking::CzyPojazdMozeWjechac(Pojazd &P)
 {
-	if (Parking::WolneMiejsce(P))
+	if (WolneMiejsce(P))
 	{
 		cout << "Jest miejsce dla pojazdu na parkingu" << endl;
 	}
 	else cout << "nie ma miejsca dla pojazdu na parkingu" << endl;
-	if (Parking::Oplata(P) <= P.gotowka)
+	if (Oplata(P) <= P.gotowka)
 	{
 		cout << "Pojazd ma pieniadze na parking"<< endl;
 	}
-	else cout << "Pojazd nie ma pieniedzy na parking: "<< Parking::Oplata(P) << endl;
-	if ((Parking::Oplata(P) <= P.gotowka) && Parking::WolneMiejsce(P)) return true;
+	else cout << "Pojazd nie ma pieniedzy na parking: "<< Oplata(P) << endl;
+	if ((Oplata(P) <= P.gotowka) && WolneMiejsce(P)) return true;
 	else return false;
 }
 
 bool Parking::Wjazd(Pojazd &P)
 {
 		
-		P.gotowka -= Parking::Oplata(P); // pobranie oplaty
-		cout << "gotowka po pobraniu: " << P.gotowka << endl;
-		if (P.typPojazdu == motocykl)
+		P.gotowka -= Oplata(P); // pobranie oplaty
+		cout << "Gotowka po pobraniu: " << P.gotowka << endl;
+		if (P.typPojazdu == MOTOCYKL)
 		{	
 			int wolneMiejsceMot = 0;
 			for (int i = 0; i <Strefy[wolnaStrefaDlaMotocykla].wszysMot; i++)
@@ -85,7 +86,7 @@ bool Parking::Wjazd(Pojazd &P)
 			return true;
 			
 		}
-		else if (P.typPojazdu == samochod)
+		else if (P.typPojazdu == SAMOCHOD)
 		{
 			for (int i = 0; i <Strefy[WolnaStrefaDlaSamochodu].wszysSam; i++)
 			{
@@ -102,7 +103,7 @@ bool Parking::Wjazd(Pojazd &P)
 			cout << endl;
 			return true;
 		}
-		else if (P.typPojazdu == ciezarowka)
+		else if (P.typPojazdu == CIEZAROWKA)
 		{
 			for (int i = 0; i <Strefy[WolnaStrefaDlaCiezarowki].wszysCiez; i++)
 			{
@@ -118,11 +119,15 @@ bool Parking::Wjazd(Pojazd &P)
 			cout << endl;
 			return true;
 		}
-		else return false;
+		else
+		{
+			return false;
+		}
+			
 }
 int Parking::Oplata(Pojazd &P)
 {
-	int oplata = ((P.czasPostoju / godzina)+1)*P.oplata;
+	int oplata = ((P.czasPostoju / GODZINA)+1)*P.oplata;
 	return oplata;
 }
 
@@ -157,7 +162,7 @@ bool Parking::WolneMiejsce(Pojazd &P)
 {
 	for (int i = 0; i < iloscStref; i++)
 	{
-		if (P.typPojazdu == motocykl)
+		if (P.typPojazdu == MOTOCYKL)
 		{
 			if (Strefy[i].motocykleZajete < Strefy[i].wszysMot)
 			{
@@ -165,7 +170,7 @@ bool Parking::WolneMiejsce(Pojazd &P)
 				return true;
 			}
 		}
-		else if (P.typPojazdu == samochod)
+		else if (P.typPojazdu == SAMOCHOD)
 		{
 			if (Strefy[i].samochodyZajete < Strefy[i].wszysSam)
 			{
@@ -173,7 +178,7 @@ bool Parking::WolneMiejsce(Pojazd &P)
 				return true;
 			}
 		}
-		else if (P.typPojazdu == ciezarowka)
+		else if (P.typPojazdu == CIEZAROWKA)
 		{
 			if (Strefy[i].ciezarowkiZajete < Strefy[i].wszysCiez)
 			{
@@ -226,6 +231,7 @@ void Parking::OpuszczenieParkingu()
 					Strefy[i].miejscaCiezarowki.erase(Strefy[i].miejscaCiezarowki.begin() + z);
 					Strefy[i].ciezarowkiZajete--;
 					cout << "Usuwa ciezarowke" << endl;
+					Strefy[i].miejscaCiezarowki.resize(Strefy[i].miejscaCiezarowki.size()+1); // Aby vector nadal posiadal taka sama wielkosc
 				}
 				else
 				{
@@ -234,11 +240,12 @@ void Parking::OpuszczenieParkingu()
 						Strefy[i].miejscaCiezarowki.erase(Strefy[i].miejscaCiezarowki.begin() + z);
 						Strefy[i].ciezarowkiZajete--;
 						cout << "Usuwa ciezarowke" << endl;
+						Strefy[i].miejscaCiezarowki.resize(Strefy[i].miejscaCiezarowki.size() + 1);
 					}
 					else
 					{
 						Strefy[i].miejscaCiezarowki[z].gotowka -= Strefy[i].miejscaCiezarowki[z].oplata;
-						Strefy[i].miejscaCiezarowki[z].czasPostoju += przedluzeniePostoju;
+						Strefy[i].miejscaCiezarowki[z].czasPostoju += PRZEDLUZENIE_POSTOJU;
 						cout << "Doplata ciezarowka" << endl;
 					}
 				}
@@ -254,6 +261,7 @@ void Parking::OpuszczenieParkingu()
 					Strefy[i].miejscaSamochody.erase(Strefy[i].miejscaSamochody.begin() + z);
 					Strefy[i].samochodyZajete--;
 					cout << "Usuwa samochod" << endl;
+					Strefy[i].miejscaSamochody.resize(Strefy[i].miejscaSamochody.size() + 1);
 				}
 				else
 				{
@@ -262,11 +270,12 @@ void Parking::OpuszczenieParkingu()
 						Strefy[i].miejscaSamochody.erase(Strefy[i].miejscaSamochody.begin() + z);
 						Strefy[i].samochodyZajete--;
 						cout << "Usuwa samochod" << endl;
+						Strefy[i].miejscaSamochody.resize(Strefy[i].miejscaSamochody.size() + 1);
 					}
 					else
 					{
 						Strefy[i].miejscaSamochody[z].gotowka -= Strefy[i].miejscaSamochody[z].oplata;
-						Strefy[i].miejscaSamochody[z].czasPostoju += przedluzeniePostoju;
+						Strefy[i].miejscaSamochody[z].czasPostoju += PRZEDLUZENIE_POSTOJU;
 						cout << "Doplata samochod" << endl;
 					}
 				}
@@ -282,6 +291,7 @@ void Parking::OpuszczenieParkingu()
 					Strefy[i].miejscaMotocykle.erase(Strefy[i].miejscaMotocykle.begin() + z);
 					Strefy[i].motocykleZajete--;
 					cout << "Usuwa motocykl" << endl;
+					Strefy[i].miejscaMotocykle.resize(Strefy[i].miejscaMotocykle.size() + 1);
 				}
 				else
 				{
@@ -290,11 +300,12 @@ void Parking::OpuszczenieParkingu()
 						Strefy[i].miejscaMotocykle.erase(Strefy[i].miejscaMotocykle.begin() + z);
 						Strefy[i].motocykleZajete--;
 						cout << "Usuwa motocykl" << endl;
+						Strefy[i].miejscaMotocykle.resize(Strefy[i].miejscaMotocykle.size() + 1);
 					}
 					else
 					{
 						Strefy[i].miejscaMotocykle[z].gotowka -= Strefy[i].miejscaMotocykle[z].oplata;
-						Strefy[i].miejscaMotocykle[z].czasPostoju += przedluzeniePostoju;
+						Strefy[i].miejscaMotocykle[z].czasPostoju += PRZEDLUZENIE_POSTOJU;
 						cout << "Doplata motocykl" << endl;
 					}
 				}

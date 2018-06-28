@@ -1,2 +1,5 @@
-﻿  Parking.cpp
+﻿  Main.cpp
+c:\users\lenovo\onedrive\git\parking\parking\consoleapplication1\main.cpp(50): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Strefa.cpp
+  Generating Code...
   ConsoleApplication1.vcxproj -> C:\Users\Lenovo\OneDrive\git\Parking\Parking\Debug\ConsoleApplication1.exe

@@ -1,11 +1,12 @@
 #include "stdafx.h"
 #include "Ciezarowka.h"
+#include "defines.h"
 
 Ciezarowka::Ciezarowka()
 {
-	typPojazdu = 2;
-	oplata = 20;
-	gotowka = Losowanie::Losuj(iloscGotowki);
-	czasPostoju = Losowanie::Losuj(minutyPostoju) + minCzasPostoju;
+	typPojazdu = CIEZAROWKA;
+	oplata = OPLATA_CIEZAROWKA;
+	gotowka = Losowanie::Losuj(ILOSC_GOTOWKI);
+	czasPostoju = Losowanie::Losuj(MINUTY_POSTOJU) + MIN_CZAS_POSTOJU;
 	//Wypisz();
 }

@@ -1,11 +1,12 @@
 #include "stdafx.h"
 #include "Motocykl.h"
+#include "defines.h"
 
 Motocykl::Motocykl()
 {
-	typPojazdu = 3;
-	oplata = 10;
-	gotowka = Losowanie::Losuj(iloscGotowki);
-	czasPostoju = Losowanie::Losuj(minutyPostoju) + minCzasPostoju;
+	typPojazdu = MOTOCYKL;
+	oplata = OPLATA_MOTOCYKL;
+	gotowka = Losowanie::Losuj(ILOSC_GOTOWKI);
+	czasPostoju = Losowanie::Losuj(MINUTY_POSTOJU) + MIN_CZAS_POSTOJU;
 	//Wypisz();
 }
