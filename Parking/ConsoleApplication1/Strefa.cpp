@@ -44,6 +44,9 @@ using namespace std;
 }
  Strefa::Strefa()
  { 
+	 ciezarowkiZajete = 0;
+	 motocykleZajete = 0;
+	 samochodyZajete = 0;
 	 LosujStrefe();
 	 WypelnienieStrefy();
 	 

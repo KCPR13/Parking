@@ -1,5 +1,13 @@
-﻿  Main.cpp
+﻿  stdafx.cpp
+  Ciezarowka.cpp
+  Losowanie.cpp
+  Main.cpp
 c:\users\lenovo\onedrive\git\parking\parking\consoleapplication1\main.cpp(50): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Motocykl.cpp
+  Parking.cpp
+  Pojazd.cpp
+  Samochod.cpp
   Strefa.cpp
   Generating Code...
+  LINK : C:\Users\Lenovo\OneDrive\git\Parking\Parking\Debug\ConsoleApplication1.exe not found or not built by the last incremental link; performing full link
   ConsoleApplication1.vcxproj -> C:\Users\Lenovo\OneDrive\git\Parking\Parking\Debug\ConsoleApplication1.exe
